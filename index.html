@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Web Page</title>
+  <style>
+    blockquote { margin-left: 20px; margin-right: 5px; }
+    pre { overflow-x: auto; }
+    .tt { font-family: monospace; }
+    .nowrap { white-space: nowrap; }
+    .example { font-family: monospace; white-space: pre; overflow-x: auto; }
+    h3 { border-top: 1px solid grey; }
+    blockquote { margin-top: 0; margin-bottom: 0; }
+    table.compact { border-collapse: collapse; }
+    table.compact th { text-align: left; background: #eeeeee; }
+    table.compact td, th { padding: 0 4px 0 8px; border: 1px solid grey; }
+  </style>
+</head>
+
+<body style="width: 96%; max-width: 720px;">
+
+
+<header>
+  <h2>Do-It-Yourself Web Authoring - a beginner's HTML tutorial</h2>
+</header>
+
+
+<nav>
+  <ul>
+    <li><a href="#basics">Creating a Web Page</a></li>
+    <li><a href="#syntax">HTML Syntax</a></li>
+    <li><a href="#chars">Special Characters</a></li>
+    <li><a href="#convert">Converting Plain Text to HTML</a></li>
+    <li><a href="#effects">Effects</a></li>
+    <li><a href="#lists">Lists</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#viewing">Viewing your Web page</a></li>
+    <li><a href="#install">Installing your Web Page on the Internet</a></li>
+    <li><a href="#more">Where to go from here</a></li>
+    <li><a href="#fluid">Postscript: Cell Phones</a></li>
+  </ul>
+</nav>
+
+
+<main>
+  <article>
+    <figure>
+      <img
+              alt="Sample image"
+              title="Text to show when mouse is hovered over this image"
+              src="img/picture-of-something.jpg"
+              style="width: 100%;">
+      <figcaption><i>A random photo...</i>  (The Hudson River at 125th Street about 2002)</figcaption>
+    </figure>
+
+    <p>
+      <a href="http://www.columbia.edu/~fdc/">Frank da Cruz</a>
+      <br>
+      <small><i>Updated in 2019 and 2021 for HTML5 and "fluidity".</i></small>
+    </p>
+
+    <section>
+      <h3 id="basics">1. Creating a Web Page</h3>
+      <p>This page was typed by hand. Anybody can do this, you don't need any special "web creation" tools or HTML editors, and the pages you make can be viewed from any browser.</p>
+
+      <p>To see how this page was made, choose <b>View Source</b> in your browser's menu. A simple web page like this one is just plain text with HTML commands (markup) mixed in.</p>
+
+      <p>When you're just learning and want to experiment, you can do everything on your PC. Create a new directory ("folder") for your website, and then put the web-page files (HTML plus any pictures) in it. Use NotePad or other plain-text editor to create your "home page", a file named <span class="tt">index.html</span>, which you can view locally with your Web browser.</p>
+    </section>
+
+    <section>
+      <h3 id="syntax">2. HTML Syntax</h3>
+      <p>Web pages are written in Hyper Text Markup Language (HTML). HTML has three special characters: <span class="tt">&lt;</span>, <span class="tt">&amp;</span>, <span class="tt">&gt;</span>. An HTML command is enclosed in <span class="tt">&lt;...&gt;</span>, for example <span class="tt">&lt;p&gt;</span>, which is a paragraph separator.</p>
+
+      <div style="overflow-x:auto;">
+        <blockquote>
+                        <pre>
+This sentence contains &lt;b&gt;bold&lt;/b&gt; text.
+                        </pre>
+        </blockquote>
+      </div>
+
+      <p>produces:</p>
+      <div style="overflow-x:auto;">
+        <blockquote>This sentence contains <b>bold</b> text.</blockquote>
+      </div>
+    </section>
+
+    <section>
+      <h3 id="chars">3. Special Characters</h3>
+      <p>HTML special "character entities" start with ampersand (<span class="tt">&amp;</span>) and end with semicolon (<span class="tt">;</span>), like "<span class="tt">&amp;euro;</span>" = "&euro;".</p>
+
+      <div style="overflow-x:auto;">
+        <blockquote>
+          <table border>
+            <tr><td><span class="tt">&amp;auml;</span><td>a-umlaut<td>&nbsp;&auml;&nbsp;</tr>
+            <tr><td><span class="tt">&amp;Auml;</span><td>A-umlaut<td>&nbsp;&Auml;&nbsp;</tr>
+            <tr><td><span class="tt">&amp;aacute;</span><td>a-acute<td>&nbsp;&aacute;&nbsp;</tr>
+            <tr><td><span class="tt">&amp;agrave;</span><td>a-grave<td>&nbsp;&agrave;&nbsp;</tr>
+            <tr><td><span class="tt">&amp;ntilde;</span><td>n-tilde<td>&nbsp;&ntilde;&nbsp;</tr>
+            <tr><td><span class="tt">&amp;szlig;</span><td>German double-s<td>&nbsp;&szlig;&nbsp;</tr>
+            <tr><td><span class="tt">&amp;thorn;</span><td>Icelandic thorn<td>&nbsp;&thorn;&nbsp;</tr>
+          </table>
+        </blockquote>
+      </div>
+    </section>
+  </article>
+</main>
+
+
+<footer>
+  <p><i>Updated in 2019 and 2021 for HTML5 and "fluidity".</i></p>
+</footer>
+</body>
+</html>
