@@ -6,16 +6,18 @@
 
 @font-face {
   font-family: 'Muller ExtraBold';
-  src: url('fonts/MullerExtraBold.eot') format('woff2'),
+  src: url('fonts/MullerExtraBold.eot');
+  src: url('fonts/MullerExtraBold.woff2') format('woff2'),
   url('fonts/MullerExtraBold.woff') format('woff'),
   url('fonts/MullerExtraBold.ttf') format('truetype');
-  font-weight: normal;
+
   font-style: normal;
 
 }
 @font-face {
   font-family: 'Muller Regular';
-  src: url('fonts/MullerRegular.eot') format('woff2'),
+  src: url('fonts/MullerRegular.eot');
+  src: url('fonts/MullerRegular.woff2') format('woff2'),
   url('fonts/MullerRegular.woff') format('woff'),
   url('fonts/MullerRegular.ttf') format('truetype');
   font-weight: normal;
@@ -24,7 +26,8 @@
 }
 @font-face {
   font-family: 'Muller Light';
-  src: url('fonts/MullerLight.eot') format('woff2'),
+  src: url('fonts/MullerLight.eot');
+  src: url('fonts/MullerLight.woff2') format('woff2'),
   url('fonts/MullerLight.woff') format('woff'),
   url('fonts/MullerLight.ttf') format('truetype');
   font-weight: normal;
