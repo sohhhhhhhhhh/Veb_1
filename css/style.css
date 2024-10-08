@@ -4,6 +4,34 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Muller ExtraBold';
+  src: url('fonts/MullerExtraBold.eot') format('woff2'),
+  url('fonts/MullerExtraBold.woff') format('woff'),
+  url('fonts/MullerExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Muller Regular';
+  src: url('fonts/MullerRegular.eot') format('woff2'),
+  url('fonts/MullerRegular.woff') format('woff'),
+  url('fonts/MullerRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Muller Light';
+  src: url('fonts/MullerLight.eot') format('woff2'),
+  url('fonts/MullerLight.woff') format('woff'),
+  url('fonts/MullerLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 img {
   display: block; /* Убираем отступы снизу */
   max-width: 100%; /* Ограничиваем ширину */
