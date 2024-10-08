@@ -1,247 +1,810 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+img {
+  display: block; /* Убираем отступы снизу */
+  max-width: 100%; /* Ограничиваем ширину */
+}
+body {
+  font-family: "Muller Regular", sans-serif;
+  padding: 0; /* Убедитесь, что padding на body равен 0 */
+  background-color: #f4f4f4;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
+/* Общие настройки */
+* {
+  box-sizing: border-box;
   margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
+  padding: 0;
+}
+
+body {
+  font-family: "Muller Regular", sans-serif;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.gradient-background {
+  background-image: linear-gradient(130.60deg, rgb(40, 42, 54) 25.416%, rgb(11, 12, 17) 79.633%);
+  background-size: cover; /* Покрывает весь экран */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Фон должен быть ниже других элементов
+  position: relative; /* Контекст для абсолютного позиционирования */
+}
+
+
+/* Новый блок для текста с фиксированной позицией */
+.content-block {
+  position: absolute; /* Фиксированное позиционирование */
+  top: 3%; /* Положение сверху (можно настроить) */
+  left: 0; /* Положение слева (можно настроить) */
+  width: calc(50% - 20px); /* Ширина блока с учетом отступов */
+  z-index: 10; /* Поднимаем текст выше фона */
+  color: #fff; /* Цвет текста */
+}
+
+/* Логотип и заголовок */
+.logo-column {
+  display: flex;
+  flex-direction: column; /* Логотип и заголовок по вертикали */
+  align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.logo-image {
   width: auto;
+  height: 50px; /* Размер логотипа */
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.concept-text {
+  font-family: "Muller Light", sans-serif; /* Лёгкий шрифт */
+  font-size: 1.6em; /* Размер шрифта */
+  color: rgba(255, 255, 255, 0.5); /* Полупрозрачный текст */
+  white-space: nowrap; /* Запрещаем перенос на новую строку */
+  margin-top: 20%;
+  margin-left: 16%;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
+.ps5-title {
+  margin-top: 0;
+  white-space: nowrap;
+  font-size: 6em; /* Увеличиваем размер заголовка */
+}
 
-.clearfix::before,
+/* Описание PS5 */
+.ps5-description {
+  font-family: "Muller Light", sans-serif;
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+  margin-top: 2%; /* Отступ сверху */
+}
+.button-container {
+  display: flex; /* Используем flexbox для размещения кнопок */
+  gap: 20px; /* Расстояние между кнопками */
+  margin-top: 4%; /* Отступ сверху для кнопок */
+}
+
+button {
+  width: 178px; /* Ширина кнопки */
+  height: 77px; /* Высота кнопки */
+  border-radius: 39px; /* Закругление углов */
+  font-family: "Muller ExtraBold", sans-serif; /* Шрифт кнопок */
+  font-size: 1.4em; /* Размер шрифта */
+  color: #fff; /* Цвет текста */
+  border: none; /* Убираем стандартную рамку */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background 0.3s ease, transform 0.3s ease; /* Плавный переход для фона */
+  z-index: 100;
+}
+
+/* Стиль для обычного состояния */
+.buy-button, .more-button {
+  background: rgb(47, 49, 60);
+}
+
+/* Стиль для состояния при наведении */
+.buy-button:hover, .more-button:hover {
+  background: linear-gradient(90deg, rgb(46, 15, 167), rgb(11, 99, 231) 129.213%);
+  transform: scale(1.05); /* Легкое увеличение при наведении */
+  box-shadow: 0 40px 100px 0 rgba(0, 0, 0, 0.46);
+}
+
+
+/* Навигация */
+.navigation {
+  font-family: "Muller Light", sans-serif;
+  text-align: right;
+  margin-top: 5%;
+  padding: 0.5%;
+  z-index: 100;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  display: inline-block;
+  margin-left: calc((100% / 5) / 2); /* Устанавливаем расстояние между пунктами */
+}
+
+.navigation a {
+  color: rgba(255, 255, 255, 0.48); /* Прозрачность 70% */
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+  z-index: 100
+}
+
+.navigation a:hover {
+  color: rgba(255, 255, 255, 1); /* Прозрачность 100% при наведении */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.49); /* Подсветка текста при наведении */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none
+}
+
+
+/* Контейнер для колонок */
+.container {
+  width: 1400px;
+  margin: 0 auto; /* Центрируем */
+  z-index: 0; /* Контент выше изображений */
+  position: relative; /* Контекст для дочерних элементов */
+}
+
+/* Колонки */
+.column {
+  float: left;
+  margin-left: 20px;
+  background-color: rgba(78, 78, 78, 0.1);
+  text-align: center;
+}
+
+/* Ширина колонок */
+.col-2 { width: calc((100% / 12) * 2 - 20px); } /* 2 колонки */
+.col-6 { width: calc((100% / 12) * 6 - 20px); } /* 6 колонок */
+
+/* Специальные стили для изображения */
+.image-column {
+  width: calc((100% / 12) * 6 - 20px); /* Занимает 6 колонок */
+  float: right; /* Устанавливаем для изображений флоат */
+
+}
+
+.overlay-image {
+  position: relative; /* Позиционируем относительно контейнера */
+  z-index: 1; /* Устанавливаем слой выше фона и overlay изображения */
+  width: 100%; /* Масштабируем по ширине блока */
+  height: auto; /* Сохраняем соотношение сторон */
+  padding: 0; /* Убираем отступы */
+  margin-top: 5%;
+  pointer-events: none;
+}
+
+.footer {
+  background-color: rgb(30, 30, 30); /* Почти черный фон */
+  color: #ffffff; /* Белый текст */
+  padding: 40px 0; /* Увеличиваем отступы сверху и снизу */
+  position: relative; /* Для правильного позиционирования */
+  z-index: 10; /* Увеличиваем z-index, чтобы футер был выше других элементов */
+}
+
+.footer .container {
+  display: flex; /* Используем flexbox для выравнивания */
+  justify-content: space-between; /* Распределяем пространство между элементами */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+.footer-navigation {
+  text-align: center; /* Центрируем текст навигации */
+}
+
+.footer-navigation ul {
+  list-style: none; /* Убираем маркеры */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-navigation li {
+  display: inline-block; /* Выстраиваем в линию */
+  margin: 0 15px; /* Отступы между пунктами */
+}
+
+.footer-navigation a {
+  color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.footer-navigation a:hover {
+  color: rgba(255, 255, 255, 1); /* Полный цвет при наведении */
+}
+
+.footer-rights {
+  text-align: center; /* Центрируем текст */
+  margin-top: 10px; /* Отступ сверху */
+  font-size: 0.9em; /* Размер шрифта */
+}
+
+
+h1 {
+  font-family: "Muller ExtraBold", sans-serif; /* Используем жирный шрифт */
+  font-size: 6em; /* Размер шрифта заголовка */
+  color: #ffffff; /* Цвет текста */
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Очистка для clearfix */
 .clearfix::after {
   content: "";
   display: table;
-}
-
-.clearfix::after {
   clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+/* Адаптивность для узких экранов */
+@media (max-width: 1399px) {
+  .container {
+    width: 1024px;
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+  }
+  .logo-image {
+    width: auto;
+    height: 30px; /* Размер логотипа */
+  }
+  .content-block {
+    position: absolute; /* Фиксированное позиционирование */
+    top: 3%; /* Положение сверху (можно настроить) */
+    left: 0; /* Положение слева (можно настроить) */
+    width: calc(50% - 20px); /* Ширина блока с учетом отступов */
+    z-index: 10; /* Поднимаем текст выше фона */
+    color: #fff; /* Цвет текста */
   }
 
-  a,
-  a:visited {
-    text-decoration: underline;
+  /* Логотип и заголовок */
+  .logo-column {
+    display: flex;
+    flex-direction: column; /* Логотип и заголовок по вертикали */
+    align-items: flex-start; /* Выравнивание по левому краю */
   }
 
-  a[href]::after {
-    content: " (" attr(href) ")";
+  .logo-image {
+    width: auto;
+    height: 30px; /* Размер логотипа */
   }
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
+  .concept-text {
+    font-family: "Muller Light", sans-serif; /* Лёгкий шрифт */
+    font-size: 1.2em; /* Размер шрифта */
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачный текст */
+    white-space: nowrap; /* Запрещаем перенос на новую строку */
+    margin-top: 20%;
+    margin-left: 16%;
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
+  .ps5-title {
+    margin-top: 0;
+    white-space: nowrap;
+    font-size: 4em; /* Увеличиваем размер заголовка */
+  }
+
+  /* Описание PS5 */
+  .ps5-description {
+    font-family: "Muller Light", sans-serif;
+    font-size: 1.0em;
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+    margin-top: 2%; /* Отступ сверху */
+  }
+  .button-container {
+    display: flex; /* Используем flexbox для размещения кнопок */
+    gap: 15px; /* Расстояние между кнопками */
+    margin-top: 3%; /* Отступ сверху для кнопок */
+  }
+
+  button {
+    width: 138px; /* Ширина кнопки */
+    height: 57px; /* Высота кнопки */
+    border-radius: 28px; /* Закругление углов */
+    font-family: "Muller ExtraBold", sans-serif; /* Шрифт кнопок */
+    font-size: 1em; /* Размер шрифта */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background 0.3s ease, transform 0.3s ease; /* Плавный переход для фона */
+    z-index: 100;
+  }
+
+  /* Стиль для обычного состояния */
+  .buy-button, .more-button {
+    background: rgb(47, 49, 60);
+  }
+
+  /* Стиль для состояния при наведении */
+  .buy-button:hover, .more-button:hover {
+    background: linear-gradient(90deg, rgb(46, 15, 167), rgb(11, 99, 231) 129.213%);
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+    box-shadow: 0 40px 100px 0 rgba(0, 0, 0, 0.46);
+  }
+
+
+  /* Навигация */
+  .navigation {
+    font-family: "Muller Light", sans-serif;
+    text-align: right;
+    margin-top: 5%;
+    padding: 0.5%;
+    z-index: 100;
+  }
+
+  .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navigation li {
+    display: inline-block;
+    margin-left: calc((100% / 5) / 2.5); /* Устанавливаем расстояние между пунктами */
+  }
+
+  .navigation a {
+    color: rgba(255, 255, 255, 0.48); /* Прозрачность 70% */
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+    z-index: 100
+  }
+
+  .navigation a:hover {
+    color: rgba(255, 255, 255, 1); /* Прозрачность 100% при наведении */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.49); /* Подсветка текста при наведении */
+  }
+
+  /* Колонки */
+  .column {
+    float: left;
+    margin-left: 15px;
+    background-color: rgba(78, 78, 78, 0.1);
+    text-align: center;
+  }
+
+  /* Ширина колонок */
+  .col-2 { width: calc((100% / 12) * 2 - 20px); } /* 2 колонки */
+  .col-6 { width: calc((100% / 12) * 6 - 20px); } /* 6 колонок */
+
+  /* Специальные стили для изображения */
+  .image-column {
+    width: calc((100% / 12) * 6 - 20px); /* Занимает 6 колонок */
+    float: right; /* Устанавливаем для изображений флоат */
+
+  }
+
+  .overlay-image {
+    position: relative; /* Позиционируем относительно контейнера */
+    z-index: 1; /* Устанавливаем слой выше фона и overlay изображения */
+    width: 100%; /* Масштабируем по ширине блока */
+    height: auto; /* Сохраняем соотношение сторон */
+    padding: 0; /* Убираем отступы */
+    margin-top: 5%;
+    pointer-events: none;
+  }
+
+  .footer {
+    background-color: rgb(30, 30, 30); /* Почти черный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 30px 0; /* Увеличиваем отступы сверху и снизу */
+    position: relative; /* Для правильного позиционирования */
+    z-index: 10; /* Увеличиваем z-index, чтобы футер был выше других элементов */
+  }
+
+  .footer .container {
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    align-items: center; /* Вертикальное выравнивание */
+  }
+
+  .footer-navigation {
+    text-align: center; /* Центрируем текст навигации */
+  }
+
+  .footer-navigation ul {
+    list-style: none; /* Убираем маркеры */
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-navigation li {
+    display: inline-block; /* Выстраиваем в линию */
+    margin: 0 15px; /* Отступы между пунктами */
+  }
+
+  .footer-navigation a {
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+  }
+
+  .footer-navigation a:hover {
+    color: rgba(255, 255, 255, 1); /* Полный цвет при наведении */
+  }
+
+  .footer-rights {
+    text-align: center; /* Центрируем текст */
+    margin-top: 10px; /* Отступ сверху */
+    font-size: 0.7em; /* Размер шрифта */
+  }
+
+
+  h1 {
+    font-family: "Muller ExtraBold", sans-serif; /* Используем жирный шрифт */
+    font-size: 4em; /* Размер шрифта заголовка */
+    color: #ffffff; /* Цвет текста */
+  }
+
+
+  /* Очистка для clearfix */
+  .clearfix::after {
     content: "";
+    display: table;
+    clear: both;
   }
 
-  pre {
-    white-space: pre-wrap !important;
+  a {
+    font-size: 1em;
   }
 
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }
+
+
+@media (max-width: 1024px) {
+  .container {
+    width: 765px;
+  }
+
+
+  .logo-image {
+    width: auto;
+    height: 20px; /* Размер логотипа */
+  }
+
+  .concept-text {
+    font-family: "Muller Light", sans-serif; /* Лёгкий шрифт */
+    font-size: 1em; /* Размер шрифта */
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачный текст */
+    white-space: nowrap; /* Запрещаем перенос на новую строку */
+    margin-top: 20%;
+    margin-left: 16%;
+  }
+
+  .ps5-title {
+    margin-top: 0;
+    white-space: nowrap;
+    font-size: 3em; /* Увеличиваем размер заголовка */
+  }
+
+  /* Описание PS5 */
+  .ps5-description {
+    font-family: "Muller Light", sans-serif;
+    font-size: 0.6em;
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+    margin-top: 2%; /* Отступ сверху */
+  }
+  .button-container {
+    display: flex; /* Используем flexbox для размещения кнопок */
+    gap: 13px; /* Расстояние между кнопками */
+    margin-top: 3%; /* Отступ сверху для кнопок */
+  }
+
+  button {
+    width: 118px; /* Ширина кнопки */
+    height: 37px; /* Высота кнопки */
+    border-radius: 28px; /* Закругление углов */
+    font-family: "Muller ExtraBold", sans-serif; /* Шрифт кнопок */
+    font-size: 0.9em; /* Размер шрифта */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background 0.3s ease, transform 0.3s ease; /* Плавный переход для фона */
+    z-index: 100;
+  }
+
+
+  .navigation li {
+    display: inline-block;
+    margin-left: calc((100% / 5) / 2.3); /* Устанавливаем расстояние между пунктами */
+  }
+
+  .navigation a {
+    color: rgba(255, 255, 255, 0.48); /* Прозрачность 70% */
+    text-decoration: none;
+    font-size: 0.7em;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+    z-index: 100
+  }
+
+
+  /* Колонки */
+  .column {
+    float: left;
+    margin-left: 13px;
+    background-color: rgba(78, 78, 78, 0.1);
+    text-align: center;
+  }
+
+
+
+  .footer {
+    background-color: rgb(30, 30, 30); /* Почти черный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 20px 0; /* Увеличиваем отступы сверху и снизу */
+    position: relative; /* Для правильного позиционирования */
+    z-index: 10; /* Увеличиваем z-index, чтобы футер был выше других элементов */
+  }
+
+  .footer-rights {
+    text-align: center; /* Центрируем текст */
+    margin-top: 10px; /* Отступ сверху */
+    font-size: 0.7em; /* Размер шрифта */
+  }
+
+  a {
+    font-size: 0.7em;
+  }
+
+
+  /* Очистка для clearfix */
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }}
+
+@media (max-width: 1023px) {
+  .container {
+    width: 480px;
+  }
+
+
+  .logo-image {
+    width: auto;
+    height: 20px; /* Размер логотипа */
+  }
+
+  .concept-text {
+    font-family: "Muller Light", sans-serif; /* Лёгкий шрифт */
+    font-size: 0.8em; /* Размер шрифта */
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачный текст */
+    white-space: nowrap; /* Запрещаем перенос на новую строку */
+    margin-top: 20%;
+    margin-left: 16%;
+  }
+
+  .ps5-title {
+    margin-top: 0;
+    white-space: nowrap;
+    font-size: 2em; /* Увеличиваем размер заголовка */
+  }
+
+  /* Описание PS5 */
+  .ps5-description {
+    font-family: "Muller Light", sans-serif;
+    font-size: 0.6em;
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+    margin-top: 3%; /* Отступ сверху */
+  }
+  .button-container {
+    display: flex; /* Используем flexbox для размещения кнопок */
+    gap: 13px; /* Расстояние между кнопками */
+    margin-top: 4%; /* Отступ сверху для кнопок */
+  }
+
+  button {
+    width: 108px; /* Ширина кнопки */
+    height: 37px; /* Высота кнопки */
+    border-radius: 28px; /* Закругление углов */
+    font-family: "Muller ExtraBold", sans-serif; /* Шрифт кнопок */
+    font-size: 0.9em; /* Размер шрифта */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background 0.3s ease, transform 0.3s ease; /* Плавный переход для фона */
+    z-index: 100;
+  }
+
+
+  .navigation li {
+    display: inline-block;
+    margin-left: calc((100% / 5) / 4); /* Устанавливаем расстояние между пунктами */
+  }
+
+  .navigation a {
+    color: rgba(255, 255, 255, 0.48); /* Прозрачность 70% */
+    text-decoration: none;
+    font-size: 0.56em;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+    z-index: 100
+  }
+
+
+  /* Колонки */
+  .column {
+    float: left;
+    margin-left: 10px;
+    background-color: rgba(78, 78, 78, 0.1);
+    text-align: center;
+  }
+
+
+
+  .footer {
+    background-color: rgb(30, 30, 30); /* Почти черный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 20px 0; /* Увеличиваем отступы сверху и снизу */
+    position: relative; /* Для правильного позиционирования */
+    z-index: 10; /* Увеличиваем z-index, чтобы футер был выше других элементов */
+  }
+
+  .footer-rights {
+    text-align: center; /* Центрируем текст */
+    margin-top: 7px; /* Отступ сверху */
+    font-size: 0.6em; /* Размер шрифта */
+  }
+
+  a {
+    font-size: 0.6em;
+  }
+
+
+  /* Очистка для clearfix */
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }}
+
+@media (max-width: 479px) {
+  .navigation {
+    display: none;
+    /* Скрываем стандартное меню */
+  }
+  html, body {
+    height: 100%; /* Убедимся, что на мобильных устройствах страница занимает весь экран */
+  }
+  .gradient-background {
+    min-height: 100% /* Обеспечиваем, что фон занимает весь экран */
+  }
+
+  .content-block {
+    padding-bottom: 20px; /* Добавляем отступы, чтобы контент не прилипал к нижнему краю */
+  }
+  .container {
+    width: 300px;
+  }
+
+
+  .logo-image {
+    width: auto;
+    height: 40px; /* Размер логотипа */
+    padding-top: 6%;
+  }
+  .overlay-image {
+    display: none;
+  }
+
+  .content-block {
+    position: absolute; /* Фиксированное позиционирование */
+    top: 3%; /* Положение сверху (можно настроить) */
+    left: 0; /* Положение слева (можно настроить) */
+    width: 100%; /* Ширина блока с учетом отступов */
+    z-index: 10; /* Поднимаем текст выше фона */
+    color: #fff; /* Цвет текста */
+  }
+  .col-6 { width: 100% } /* 6 колонок */
+
+  .concept-text {
+    font-family: "Muller Light", sans-serif; /* Лёгкий шрифт */
+    font-size: 0.6em; /* Размер шрифта */
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачный текст */
+    white-space: nowrap; /* Запрещаем перенос на новую строку */
+    margin-top: 20%;
+    margin-left: 16%;
+  }
+
+  .ps5-title {
+    margin-top: 0;
+    white-space: nowrap;
+    font-size: 3em; /* Увеличиваем размер заголовка */
+  }
+
+  /* Описание PS5 */
+  .ps5-description {
+    font-family: "Muller Light", sans-serif;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+    margin-top: 3%; /* Отступ сверху */
+  }
+  .button-container {
+    display: flex; /* Используем flexbox для размещения кнопок */
+    gap: 10px; /* Расстояние между кнопками */
+    margin-top: 4%; /* Отступ сверху для кнопок */
+  }
+
+  button {
+    width: 100px; /* Ширина кнопки */
+    height: 40px; /* Высота кнопки */
+    border-radius: 28px; /* Закругление углов */
+    font-family: "Muller ExtraBold", sans-serif; /* Шрифт кнопок */
+    font-size: 1em; /* Размер шрифта */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background 0.3s ease, transform 0.3s ease; /* Плавный переход для фона */
+    z-index: 100;
+  }
+
+
+
+  /* Колонки */
+  .column {
+    float: left;
+    margin-left: 5px;
+    background-color: rgba(78, 78, 78, 0.1);
+    text-align: center;
+  }
+
+
+
+  .footer {
+    background-color: rgb(30, 30, 30); /* Почти черный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 10px 0; /* Увеличиваем отступы сверху и снизу */
+    position: relative; /* Для правильного позиционирования */
+    z-index: 10; /* Увеличиваем z-index, чтобы футер был выше других элементов */
+  }
+
+  .footer-rights {
+    text-align: center; /* Центрируем текст */
+    margin-top: 7px; /* Отступ сверху */
+    font-size: 0.3em; /* Размер шрифта */
+  }
+
+  a {
+    font-size: 0.6em;
+  }
+
+
+  /* Очистка для clearfix */
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }}
+
+
+
+
+
+
 
