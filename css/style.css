@@ -741,7 +741,10 @@ p {
     padding-top: 6%;
   }
   .overlay-image {
-    display: none;
+    padding-top: 90%;
+    opacity: 30%;
+    padding-right: 5%;
+    padding-bottom: 0;
   }
 
   .content-block {
